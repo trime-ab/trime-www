@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800|Montserrat:400,900');
+@import url('https://use.typekit.net/nkq8bfq.css');
+html {
+  box-sizing: border-box;
+}
+html *,
+  html *:before,
+  html *:after {
+    box-sizing: border-box;
+  }
+html,
+  html body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+  }
+html #root {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    width: 100%;
+  }

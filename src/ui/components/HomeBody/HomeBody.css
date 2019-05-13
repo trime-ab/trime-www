@@ -1,0 +1,47 @@
+.body-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  background: white;
+}
+
+.body-container.desktop {
+    padding: 0 calc(4rem * 2);
+  }
+
+.body-container.desktop img {
+      min-width: 750px;
+      padding: calc(4rem * 2) 0 4rem;
+    }
+
+.body-container.desktop img:first-child {
+        padding-top: 4rem;
+      }
+
+.body-container.desktop h2 {
+      margin: 0 4rem;
+    }
+
+.body-container.mobile img {
+      padding: 4rem 0 4rem;
+    }
+
+.body-container img {
+    object-fit: contain;
+    max-width: 80%;
+  }
+
+.body-container h2 {
+    text-align: center;
+  }

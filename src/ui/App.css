@@ -1,0 +1,142 @@
+.App {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 20px;
+}
+
+.App {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #000;
+  }
+
+.App input {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #000;
+  }
+
+.App input[type='text'] {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+
+.App input[type='button'] {
+    font-family: Montserrat, 'Helvetica Neue', sans-serif;
+    background: #ffdd34;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+.App ::-webkit-input-placeholder {
+    color: #386573;
+    font-size: 20px;
+  }
+
+.App ::-moz-placeholder {
+    color: #386573;
+    font-size: 20px;
+  }
+
+.App :-ms-input-placeholder {
+    color: #386573;
+    font-size: 20px;
+  }
+
+.App ::-ms-input-placeholder {
+    color: #386573;
+    font-size: 20px;
+  }
+
+.App ::placeholder {
+    color: #386573;
+    font-size: 20px;
+  }
+
+.App .main-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+  }
+
+.App h1 {
+    margin-bottom: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+.App h2 {
+    margin-bottom: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+.App h3 {
+    margin-bottom: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+.App h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    line-height: 3rem;
+  }
+
+.App h2 {
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+
+.App h3 {
+    font-size: 1rem;
+  }
+
+.App small {
+    font-size: 0.7rem;
+    font-weight: 200;
+  }
+
+.App textarea,
+  .App select,
+  .App input,
+  .App button {
+    outline: none;
+  }
+
+.App.desktop h2 {
+      font-size: 2rem;
+    }
+
+.App.mobile h2 {
+      font-size: 1.8rem;
+      white-space: normal;
+    }
