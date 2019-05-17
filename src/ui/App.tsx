@@ -3,10 +3,10 @@ import './App.css';
 import { observer, Provider, inject } from 'mobx-react';
 import React, { Component } from 'react';
 
-import l from '../logic/Logger';
 import routerStore from './navigation/Router.store';
 import classnames from 'classnames';
 import ResponsiveProps from '../logic/Responsive/Responsive.props';
+import l from '../logic/Logger/Logger';
 
 @inject('responsiveState')
 @observer

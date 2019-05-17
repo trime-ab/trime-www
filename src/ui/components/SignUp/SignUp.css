@@ -6,7 +6,7 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
-  width: 80%;
+  width: 85%;
 }
 
 .sign-up-container.mobile {
@@ -16,18 +16,6 @@
             align-items: center;
   }
 
-.sign-up-container .text-input {
-    background: none;
-    border: none;
-    border-bottom: 1px solid black;
-    margin: 1.2rem 0;
-  }
-
 .sign-up-container .text-input.mobile {
       width: 100%;
     }
-
-.sign-up-container .button {
-    width: 80%;
-    margin: 0.6rem 0;
-  }

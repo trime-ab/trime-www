@@ -13,23 +13,97 @@
     font-weight: 300;
     font-style: normal;
     color: var(--darkColor);
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
   }
 
   input[type='text'] {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5rem;
+    margin: 2rem 0 1.2rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #617478;
+    &:focus {
+      border-bottom: 1px solid black;
+    }
   }
 
+  button,
   input[type='button'] {
     font-family: var(--montserratFontFamily);
     background: var(--yellow);
-    font-size: 0.8125rem;
+    font-size: 1rem;
     font-weight: 800;
     border: none;
     border-radius: 20px;
     padding: 10px;
+    cursor: pointer;
+    min-width: 220px;
+    margin: 0.6rem 0;
+    &:disabled {
+      color: var(--darkYellow);
+    }
   }
 
+  .radio-input {
+    &.p-radiobutton {
+      .p-radiobutton-box {
+        &.p-highlight {
+          border-color: var(--strongYellow);
+          background-color: var(--strongYellow);
+        }
+        &.p-highlight:not(.p-disabled):hover {
+          border-color: black;
+          background-color: var(--yellow);
+        }
+      }
+    }
+  }
+
+  .checkbox-input {
+    &.p-checkbox {
+      .p-checkbox-box {
+        &.p-highlight {
+          border-color: var(--strongYellow);
+          background-color: var(--strongYellow);
+        }
+        &.p-highlight:not(.p-disabled):hover {
+          border-color: black;
+          background-color: var(--yellow);
+        }
+      }
+    }
+  }
+
+  .form-group {
+    display: flex;
+    margin: 2rem 0 0;
+    width: 100%;
+    flex-direction: column;
+
+    > p {
+      color: var(--weakColor);
+      margin: 0 0 1.2rem;
+    }
+  }
+
+  .input-group {
+    display: flex;
+    align-items: center;
+
+    > label {
+      margin-right: 2rem;
+      margin-left: 0.7rem;
+    }
+  }
+
+  .weak {
+    color: var(--weakColor);
+  }
   ::placeholder {
     color: var(--weakColor);
     font-size: 20px;

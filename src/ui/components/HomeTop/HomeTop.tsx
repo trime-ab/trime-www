@@ -8,39 +8,41 @@ import SignUp from '../SignUp/SignUp';
 import { observer, inject } from 'mobx-react';
 import ResponsiveProps from '../../../logic/Responsive/Responsive.props';
 import classnames from 'classnames';
+import HomeTopContent from '../HomeTopContent/HomeTopContent';
+import signUpState from '../SignUp/SignUp.state';
+import { ResponsiveState } from '../../../logic/Responsive/Responsive.state';
+import { SignUpState } from '../SignUp/SignUp.state';
+import HomeTopSignUp from '../HomeTopSignUp/HomeTopSignUp';
 
-@inject('responsiveState')
+interface HomeTopProps extends ResponsiveProps {
+  signUpState?: SignUpState;
+}
+@inject('responsiveState', 'signUpState')
 @observer
-class HomeTop extends React.Component<ResponsiveProps> {
+class HomeTop extends React.Component<HomeTopProps> {
+  componentDidMount() {
+//    this.props.signUpState.toggleSignUpClicked();
+  }
+
   render() {
-    const className = this.getClassNames;
+    const isMobile = this.props.responsiveState.isMobileClassNames;
+    const containerClassNames = classnames('top-container', isMobile, {
+      'sign-up': this.props.signUpState.signUpClicked,
+    });
+    const backgroundClassNames = classnames('top-background', isMobile);
 
     return (
-      <div className="top-container">
-        <div className={className('top-background')}>
-          <div className={className('top-content')}>
-            <div className={className('top-image-container')}>
-              <img src={phonesAndDudeImg} alt="Trime" />
-            </div>
-            <div className={className('top-text-container')}>
-              <h1>Welcome to</h1>
-              <img src={trimeImg} alt="Trime" className={className('trime')} />
-              <div className={className('top-text')}>
-                Trime is an app for <br /> Personal trainers & trainees. <br />
-                Scroll down and we will tell you more!
-              </div>
-              <SignUp />
-            </div>
-          </div>
+      <div className={containerClassNames}>
+        <div className={backgroundClassNames}>
+          {this.props.signUpState.signUpClicked ? (
+            <HomeTopSignUp />
+          ) : (
+            <HomeTopContent />
+          )}
         </div>
       </div>
     );
   }
-
-  private getClassNames = (className: string): string => {
-    const isMobile = this.props.responsiveState.isMobileClassNames;
-    return classnames(className, isMobile);
-  };
 }
 
 export default HomeTop;

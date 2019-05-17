@@ -1,13 +1,12 @@
 import './HomeBody.css';
 
+import classnames from 'classnames';
+import { inject, observer } from 'mobx-react';
 import React from 'react';
 
+import ResponsiveProps from '../../../logic/Responsive/Responsive.props';
 import trainerLoveTraineeImg from '../../assets/trainer-love-trainee.png';
 import storyImg from '../../assets/trime-story-1.png';
-import ResponsiveProps from '../../../logic/Responsive/Responsive.props';
-import { observer, inject } from 'mobx-react';
-import classnames from 'classnames';
-import l from '../../../logic/Logger';
 
 @inject('responsiveState')
 @observer

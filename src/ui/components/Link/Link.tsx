@@ -1,13 +1,9 @@
-import React, {
-  ReactNode,
-  ReactText,
-  ReactComponentElement,
-  ReactPropTypes,
-} from 'react';
-import { routerStore } from '../../../stores';
-import l from '../../../logic/Logger';
 import './Link.css';
+
 import classnames, { ClassArray } from 'classnames';
+import React, { ReactComponentElement, ReactNode, ReactPropTypes, ReactText } from 'react';
+
+import { routerStore } from '../../../stores';
 
 export interface LinkProps {
   children: ReactNode;
@@ -32,7 +28,6 @@ class Link extends React.Component<LinkProps> {
   }
 
   private clickHandler = (): void => {
-    l.debug(`A link to ${this.props.to} was clicked!`);
     routerStore.navigate(this.props.to);
   };
 }

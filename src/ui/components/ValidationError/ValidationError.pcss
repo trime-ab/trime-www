@@ -1,0 +1,15 @@
+@import '../../../variables.pcss';
+
+.validation-error {
+  align-self: flex-start;
+  color: var(--red);
+  position: relative;
+
+  &.radio-validation {
+    margin-top: 0.7rem;
+  }
+
+  &:not(.radio-validation) {
+    margin-top: -1rem;
+  }
+}

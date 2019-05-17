@@ -1,0 +1,14 @@
+.validation-error {
+  -webkit-align-self: flex-start;
+          align-self: flex-start;
+  color: #e80010;
+  position: relative;
+}
+
+.validation-error.radio-validation {
+    margin-top: 0.7rem;
+  }
+
+.validation-error:not(.radio-validation) {
+    margin-top: -1rem;
+  }

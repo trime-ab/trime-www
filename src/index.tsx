@@ -1,13 +1,12 @@
 import './index.css';
 
+import { Provider } from 'mobx-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import * as stores from './stores';
 import App from './ui/App';
 import appService from './ui/App.service';
-import l from './logic/Logger';
-import { Provider } from 'mobx-react';
-import * as stores from './stores';
 
 appService.init();
 

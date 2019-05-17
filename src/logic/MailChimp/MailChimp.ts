@@ -1,11 +1,27 @@
-import l from "../Logger";
+import axios, { AxiosError } from 'axios';
+
+import Person from '../../domain/Person';
+import personService from '../Person/Person.service';
+import mailChimpStore from './MailChimp.store';
+import l from '../Logger/Logger';
 
 class MailChimp {
+  init = (): void => {
+  };
 
-  init = ():void => {
-    l.log(process.env.REACT_APP_MAILCHIMP_SECRET);
-  }
+  add = async (person: Person): Promise<void> => {
+    const mailChimpContact = personService.transformToMailChimpContact(person);
+    try {
+      await axios.post(this.getMembersPath());
+    } catch (error) {
+      l.error(error);
+      l.log('Do something!');
+    }
+  };
 
+  private getMembersPath = (): string => {
+    return `/lists/${mailChimpStore.LIST_ID}/members/`;
+  };
 }
 
 const mailChimp = new MailChimp();
