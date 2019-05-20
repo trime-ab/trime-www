@@ -1,0 +1,39 @@
+@import '../../../variables.pcss';
+
+.sign-up-result-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  p {
+    text-align: center;
+  }
+  .go-back {
+    width: 50%;
+    display: flex;
+    margin: auto;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    img {
+      width: 30%;
+      margin-left: 10%;
+    }
+  }
+
+  &.desktop {
+    padding: var(--pageMargin);
+  }
+  &.mobile {
+    padding: 2rem;
+    img {
+      width: 70%;
+    }
+  }
+}

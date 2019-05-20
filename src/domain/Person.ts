@@ -1,20 +1,19 @@
-import { observable, action } from 'mobx';
-import ContactStatus from './ContactStatus';
-import PersonType from './PersonType';
+import { action, observable } from 'mobx';
+
 import Channel from './Channel';
+import PersonType from './PersonType';
 
 class Person {
-  @observable email_address: string = '';
+  @observable email: string = '';
   @observable firstName: string = '';
   @observable lastName: string = '';
-  @observable status: ContactStatus = null;
   @observable city: string = '';
   @observable type: PersonType = null;
-  @observable marketing_permissions: Channel[] = [];
+  @observable channels: Channel[] = [];
   @observable phone?: string = '';
 
-  @action setEmailAddress = (email_address: string) => {
-    this.email_address = email_address;
+  @action setEmail = (email: string) => {
+    this.email = email;
   };
   @action setFirstName = (firstName: string) => {
     this.firstName = firstName;
@@ -22,17 +21,14 @@ class Person {
   @action setLastName = (lastName: string) => {
     this.lastName = lastName;
   };
-  @action setStatus = (status: ContactStatus) => {
-    this.status = status;
-  };
   @action setCity = (city: string) => {
     this.city = city;
   };
   @action setType = (type: PersonType) => {
     this.type = type;
   };
-  @action setMarketingPermissions = (marketing_permissions: Channel[]) => {
-    this.marketing_permissions = marketing_permissions;
+  @action setChannels = (channels: Channel[]) => {
+    this.channels = channels;
   };
   @action setPhone = (phone: string) => {
     this.phone = phone;

@@ -1,9 +1,7 @@
-import 'moment/locale/en-gb';
-
-import routerService from './navigation/Router.service';
+import axiosService from '../logic/Axios/Axios.service';
 import mailChimp from '../logic/MailChimp/MailChimp';
 import responsive from '../logic/Responsive/Responsive';
-import axiosService from '../logic/Axios/Axios.service';
+import routerService from './navigation/Router.service';
 
 class AppService {
   init = (): void => {

@@ -1,10 +1,9 @@
-import MailChimpContact from '../../domain/MailChimpContact';
+import { computed, observable } from 'mobx';
+
 import Person from '../../domain/Person';
-import { observable, computed, toJS } from 'mobx';
+import PersonType from '../../domain/PersonType';
 import emailService from '../email/EmailService';
 import phoneService from '../phone/PhoneService';
-import PersonType from '../../domain/PersonType';
-import l from '../Logger/Logger';
 import stringUtils from '../StringUtils/StringUtils';
 
 export class PersonStore {
@@ -13,8 +12,8 @@ export class PersonStore {
   @computed get isValid(): boolean {
     const p = this.person;
     return (
-      stringUtils.hasValue(p.email_address) &&
-      emailService.validateEmail(p.email_address) &&
+      stringUtils.hasValue(p.email) &&
+      emailService.validateEmail(p.email) &&
       phoneService.validatePhoneNumber(p.phone) &&
       stringUtils.hasValue(p.firstName) &&
       stringUtils.hasValue(p.lastName) &&
@@ -33,7 +32,7 @@ export class PersonStore {
   }
 
   @computed get hasAgreed(): boolean {
-    return this.person.marketing_permissions.length > 0;
+    return this.person.channels.length > 0;
   }
 }
 

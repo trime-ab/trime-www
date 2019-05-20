@@ -1,6 +1,6 @@
 import { parsePhoneNumberFromString, PhoneNumber } from 'libphonenumber-js';
+
 import stringUtils from '../StringUtils/StringUtils';
-import { number } from 'prop-types';
 
 class PhoneService {
   parsePhoneNumber = (numberStr: string): PhoneNumber => {

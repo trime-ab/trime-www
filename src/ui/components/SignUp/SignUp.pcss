@@ -3,16 +3,28 @@
 .sign-up-container {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 90%;
+  padding-top: 1.5rem;
 
-  &.mobile {
-    padding-top: 1.5rem;
-    align-items: center;
+  &.desktop {
+    max-width: 350px;
   }
 
   .text-input {
     &.mobile {
       width: 100%;
+    }
+  }
+
+  .button {
+    display: block;
+    &.desktop {
+      margin: 2rem 0 0;
+      width: 70%;
+    }
+    &.mobile {
+      width: 60%;
+      margin: 2rem auto 0;
     }
   }
 }

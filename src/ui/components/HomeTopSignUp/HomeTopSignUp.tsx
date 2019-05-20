@@ -7,27 +7,43 @@ import classnames from 'classnames';
 import { inject, observer } from 'mobx-react';
 import { Checkbox } from 'primereact/checkbox';
 import { RadioButton } from 'primereact/radiobutton';
-import React from 'react';
+import React, { createRef, RefObject } from 'react';
 
 import PersonType from '../../../domain/PersonType';
+import l from '../../../logic/Logger/Logger';
+import mailChimp from '../../../logic/MailChimp/MailChimp';
 import { PersonStore } from '../../../logic/Person/Person.store';
 import ResponsiveProps from '../../../logic/Responsive/Responsive.props';
-import homeTopSignUpService from './HomeTopSignUp.service';
-import { HomeTopSignUpState } from './HomeTopSignUp.state';
-import l from '../../../logic/Logger/Logger';
-import ValidationError from '../ValidationError/ValidationError';
-import mailChimp from '../../../logic/MailChimp/MailChimp';
-import trimeImg from '../../assets/trime.png';
-import pointingDude from '../../assets/pointing-dude.png';
 import responsiveState from '../../../logic/Responsive/Responsive.state';
+import pointingDude from '../../assets/pointing-dude.png';
+import trimeImg from '../../assets/trime.png';
+import signUpResultState, {
+  SignUpResultState,
+} from '../SignUpResult/SignUpResult.state';
+import ValidationError from '../ValidationError/ValidationError';
+import { HomeTopSignUpState } from './HomeTopSignUp.state';
+
 interface HomeTopSignUpProps extends ResponsiveProps {
   personStore?: PersonStore;
   homeTopSignUpState?: HomeTopSignUpState;
+  signUpResultState?: SignUpResultState;
 }
 
-@inject('responsiveState', 'personStore', 'homeTopSignUpState')
+@inject(
+  'responsiveState',
+  'personStore',
+  'homeTopSignUpState',
+  'signUpResultState'
+)
 @observer
 class HomeTopSignUp extends React.Component<HomeTopSignUpProps> {
+  private emailInputRef = createRef<HTMLInputElement>();
+  private phoneInputRef = createRef<HTMLInputElement>();
+
+  componentDidMount() {
+    this.setFocus();
+  }
+
   render() {
     const state = this.props.homeTopSignUpState;
     const getClassNames = this.getClassNames;
@@ -37,15 +53,23 @@ class HomeTopSignUp extends React.Component<HomeTopSignUpProps> {
     const permissionLabelClassNames = classnames('permissions-label', {
       weak: !personStore.hasAgreed,
     });
+    const isMobileClassName = this.props.responsiveState.isMobileClassNames;
+    const containerClassNames = classnames(
+      'top-sign-up-container',
+      isMobileClassName,
+      {
+        'signing-up': state.signUpInProgress,
+      }
+    );
 
     return (
-      <div className={getClassNames('top-sign-up-container')}>
+      <div className={containerClassNames}>
         {isMobile ? null : (
           <div className="pointing-dude-container">
             <img src={pointingDude} alt="Trime" className="pointing-dude" />
           </div>
         )}
-        <form>
+        <form onSubmit={e => this.handleFormSubmit(e)}>
           <div className="trime-container">
             <img
               src={trimeImg}
@@ -54,11 +78,12 @@ class HomeTopSignUp extends React.Component<HomeTopSignUpProps> {
             />
           </div>
           <input
+            ref={this.emailInputRef}
             type="text"
-            value={person.email_address}
+            value={person.email}
             placeholder="Email*"
             className={this.getClassNames('email text-input')}
-            onChange={e => person.setEmailAddress(e.target.value)}
+            onChange={e => person.setEmail(e.target.value)}
             onBlur={() => state.addTouched('email_address')}
           />
           <ValidationError
@@ -70,6 +95,7 @@ class HomeTopSignUp extends React.Component<HomeTopSignUpProps> {
             message="Email address must be filled in"
           />
           <input
+            ref={this.phoneInputRef}
             type="text"
             value={person.phone}
             placeholder="Phone"
@@ -153,21 +179,21 @@ class HomeTopSignUp extends React.Component<HomeTopSignUpProps> {
               <Checkbox
                 className={this.getClassNames('checkbox-input')}
                 checked={personStore.hasAgreed}
-                onChange={() => homeTopSignUpService.toggleAgreeToPermissions()}
+                onChange={() => state.toggleAgreeToPermissions()}
               />
               <label className={permissionLabelClassNames}>
-                Yes, I want to receive email updates from Trime
+                Yes, I want to receive updates from Trime
               </label>
             </div>
-            <small className={getClassNames('terms')}>
-              By signing up you acknowledge that your information will be
-              transferred to Mailchimp for processing. Learn more about
-              Mailchimp's privacy practices here.
-            </small>
             <small className={getClassNames('terms')}>
               You can unsubscribe at any time by clicking the link in the footer
               of our emails. For information about our privacy practices, please
               contact us at info@trime.app.
+            </small>
+            <small className={getClassNames('terms')}>
+              By signing up you acknowledge that your information will be
+              transferred to Mailchimp for processing. Learn more about
+              Mailchimp's privacy practices here.
             </small>
           </div>
           <div
@@ -175,11 +201,11 @@ class HomeTopSignUp extends React.Component<HomeTopSignUpProps> {
             className={getClassNames('button-container')}
           >
             <button
+              type="submit"
               className={this.getClassNames('button')}
-              onClick={() => mailChimp.add(personStore.person)}
               disabled={!personStore.isValid}
             >
-              Sign Up
+              {state.signUpInProgress ? 'Signing up...' : 'Sign Up'}
             </button>
           </div>
         </form>
@@ -190,6 +216,30 @@ class HomeTopSignUp extends React.Component<HomeTopSignUpProps> {
   private getClassNames = (className: string): string => {
     const isMobile = this.props.responsiveState.isMobileClassNames;
     return classnames(className, isMobile);
+  };
+
+  private handleFormSubmit = async e => {
+    e.preventDefault();
+    this.props.homeTopSignUpState.toggleSigningUpInProgress();
+    try {
+      const result = await mailChimp.add(this.props.personStore.person);
+      this.props.signUpResultState.setResult(result);
+    } catch (error) {
+      this.props.signUpResultState.setError(error);
+      this.props.homeTopSignUpState.toggleSigningUpInProgress();
+    }
+  };
+
+  private setFocus = (): void => {
+    let ref;
+    switch (this.props.homeTopSignUpState.focusField) {
+      case 'email':
+        ref = this.emailInputRef;
+        break;
+      default:
+        ref = this.phoneInputRef;
+    }
+    ref.current!.focus();
   };
 }
 

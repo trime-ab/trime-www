@@ -1,5 +1,6 @@
-import { RouterStore as Router5Store } from 'mobx-router5';
 import { computed } from 'mobx';
+import { RouterStore as Router5Store } from 'mobx-router5';
+
 import routes, { Route } from './routes';
 
 class RouterStore extends Router5Store {

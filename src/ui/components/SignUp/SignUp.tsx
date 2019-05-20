@@ -4,18 +4,20 @@ import classnames from 'classnames';
 import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-import ResponsiveProps from '../../../logic/Responsive/Responsive.props';
-import signUpState, { SignUpState } from './SignUp.state';
 import { PersonStore } from '../../../logic/Person/Person.store';
-import l from '../../../logic/Logger/Logger';
-import emailService from '../../../logic/email/EmailService';
+import ResponsiveProps from '../../../logic/Responsive/Responsive.props';
+import homeTopSignUpState, {
+  HomeTopSignUpState,
+} from '../HomeTopSignUp/HomeTopSignUp.state';
+import signUpState, { SignUpState } from './SignUp.state';
 
 interface SignUpProps extends ResponsiveProps {
   signUpState?: SignUpState;
   personStore?: PersonStore;
+  homeTopSignUpState?: HomeTopSignUpState;
 }
 
-@inject('signUpState', 'responsiveState', 'personStore')
+@inject('signUpState', 'responsiveState', 'personStore', 'homeTopSignUpState')
 @observer
 class SignUp extends React.Component<SignUpProps> {
   render() {
@@ -28,17 +30,17 @@ class SignUp extends React.Component<SignUpProps> {
 
     return (
       <div className={containerClassNames}>
-        <form>
+        <form onSubmit={e => this.handleFormSubmit(e)}>
           <input
             type="text"
-            value={person.email_address}
+            value={person.email}
             placeholder="Email"
             className={inputClassNames}
-            onChange={e => person.setEmailAddress(e.target.value)}
+            onChange={e => person.setEmail(e.target.value)}
           />
           <button
+            type="submit"
             className={buttonClassNames}
-            onClick={() => state.toggleSignUpClicked()}
             disabled={!state.isValid}
           >
             Sign Up
@@ -47,6 +49,11 @@ class SignUp extends React.Component<SignUpProps> {
       </div>
     );
   }
+
+  private handleFormSubmit = e => {
+    e.preventDefault();
+    this.props.signUpState.toggleSignUpClicked();
+  };
 }
 
 export default SignUp;

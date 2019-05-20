@@ -1,6 +1,6 @@
 import * as EmailValidator from 'email-validator';
+
 import stringUtils from '../StringUtils/StringUtils';
-import l from '../Logger/Logger';
 
 class EmailService {
   validateEmail = (email: string): boolean => {

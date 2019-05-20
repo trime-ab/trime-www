@@ -1,4 +1,4 @@
-import { action, observable, computed } from 'mobx';
+import { action, computed, observable } from 'mobx';
 
 export class ResponsiveState {
   @observable isMobile: boolean = false;

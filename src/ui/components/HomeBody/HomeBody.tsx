@@ -14,7 +14,7 @@ class HomeBody extends React.Component<ResponsiveProps> {
   render() {
     const isMobile = this.props.responsiveState.isMobileClassNames;
     const containerClassNames = classnames('body-container', isMobile);
-    
+
     return (
       <div className={containerClassNames}>
         <img src={trainerLoveTraineeImg} alt="Trime" />

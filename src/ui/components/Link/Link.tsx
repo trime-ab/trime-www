@@ -1,7 +1,12 @@
 import './Link.css';
 
 import classnames, { ClassArray } from 'classnames';
-import React, { ReactComponentElement, ReactNode, ReactPropTypes, ReactText } from 'react';
+import React, {
+  ReactComponentElement,
+  ReactNode,
+  ReactPropTypes,
+  ReactText,
+} from 'react';
 
 import { routerStore } from '../../../stores';
 

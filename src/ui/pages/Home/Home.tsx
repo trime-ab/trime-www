@@ -2,10 +2,11 @@ import './Home.css';
 
 import { observer } from 'mobx-react';
 import React from 'react';
-import HomeTop from '../../components/HomeTop/HomeTop';
+
 import HomeBody from '../../components/HomeBody/HomeBody';
-import HomeSignUp from '../../components/HomeSignUp/HomeSignUp';
 import HomeBottom from '../../components/HomeBottom/HomeBottom';
+import HomeBottomSignUp from '../../components/HomeBottomSignUp/HomeBottomSignUp';
+import HomeTop from '../../components/HomeTop/HomeTop';
 
 @observer
 class Home extends React.Component {
@@ -14,7 +15,7 @@ class Home extends React.Component {
       <div className="home-container">
         <HomeTop />
         <HomeBody />
-        <HomeSignUp />
+        <HomeBottomSignUp />
         <HomeBottom />
       </div>
     );

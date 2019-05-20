@@ -14,10 +14,6 @@
   overflow: hidden;
 }
 
-.top-container:not(.sign-up) {
-    height: 95vh;
-  }
-
 .top-container .top-background {
     width: 33.3%;
     height: 100%;

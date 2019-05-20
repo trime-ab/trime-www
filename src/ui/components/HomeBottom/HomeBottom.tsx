@@ -1,13 +1,10 @@
 import './HomeBottom.css';
 
+import classnames from 'classnames';
+import { inject, observer } from 'mobx-react';
 import React from 'react';
 
-import phonesAndDudeImg from '../../assets/phones-and-dude.png';
-import trimeImg from '../../assets/trime.png';
-import SignUp from '../SignUp/SignUp';
-import { observer, inject } from 'mobx-react';
 import ResponsiveProps from '../../../logic/Responsive/Responsive.props';
-import classnames from 'classnames';
 
 @inject('responsiveState')
 @observer
@@ -17,8 +14,7 @@ class HomeBottom extends React.Component<ResponsiveProps> {
 
     return (
       <div className="bottom-container">
-        <div className={className('bottom-content')}>
-        </div>
+        <div className={className('bottom-content')} />
       </div>
     );
   }

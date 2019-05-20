@@ -54,6 +54,11 @@
     width: 100%;
   }
 
+.top-sign-up-container.signing-up
+    *:not(.button-container):not(.button):not(.pointing-dude-container):not(.pointing-dude) {
+    opacity: 0.5;
+  }
+
 .top-sign-up-container .button-container {
     margin-top: 4rem;
     display: -webkit-box;
@@ -70,6 +75,7 @@
     width: 200px;
     -webkit-align-self: flex-end;
             align-self: flex-end;
+    pointer-events: none;
   }
 
 .top-sign-up-container .pointing-dude-container .pointing-dude {

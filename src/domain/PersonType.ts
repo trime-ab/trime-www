@@ -1,6 +1,6 @@
 enum PersonType {
-  TRAINEE = 'trainee',
-  TRAINER = 'trainer',
+  TRAINEE = 'Trainee',
+  TRAINER = 'Trainer',
 }
 
 export default PersonType;

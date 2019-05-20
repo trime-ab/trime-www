@@ -1,4 +1,5 @@
 import enquire from 'enquire.js';
+
 import responsiveState from './Responsive.state';
 
 export class Responsive {

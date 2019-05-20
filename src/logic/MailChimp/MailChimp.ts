@@ -1,26 +1,23 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 import Person from '../../domain/Person';
-import personService from '../Person/Person.service';
-import mailChimpStore from './MailChimp.store';
 import l from '../Logger/Logger';
 
 class MailChimp {
-  init = (): void => {
-  };
+  private readonly API_ADD_PATH = '/mailchimp-add';
 
-  add = async (person: Person): Promise<void> => {
-    const mailChimpContact = personService.transformToMailChimpContact(person);
+  init = (): void => {};
+
+  add = async (person: Person): Promise<any> => {
     try {
-      await axios.post(this.getMembersPath());
+      l.debug('Adding...', person);
+      const result = await axios.post(this.API_ADD_PATH, person);
+      l.debug('Successfully added', result);
+      return result;
     } catch (error) {
-      l.error(error);
-      l.log('Do something!');
+      l.error(error.response);
+      throw error.response;
     }
-  };
-
-  private getMembersPath = (): string => {
-    return `/lists/${mailChimpStore.LIST_ID}/members/`;
   };
 }
 

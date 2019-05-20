@@ -1,13 +1,14 @@
 import axios from 'axios';
 
+import firebase from '../Firebase/Firebase';
 import l from '../Logger/Logger';
-import mailChimpStore from '../MailChimp/MailChimp.store';
 
 class AxiosService {
-  private BASE_URL: string = mailChimpStore.API_ROOT;
+  private BASE_URL: string = firebase.FUNCTIONS_URL;
 
   init = (): void => {
     axios.defaults.baseURL = this.BASE_URL;
+    axios.defaults.headers.post['Content-Type'] = 'application/json';
     l.debug('Axios initialised');
   };
 }

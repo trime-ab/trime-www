@@ -1,9 +1,10 @@
-import createRouter, { Router, Options } from 'router5';
-import browserPlugin from 'router5-plugin-browser';
-import { mobxPlugin } from 'mobx-router5';
-import routes from './routes';
-import { routerStore } from '../../stores';
 import { computed } from 'mobx';
+import { mobxPlugin } from 'mobx-router5';
+import createRouter, { Options, Router } from 'router5';
+import browserPlugin from 'router5-plugin-browser';
+
+import { routerStore } from '../../stores';
+import routes from './routes';
 
 class RouterService {
   options: Partial<Options> = {

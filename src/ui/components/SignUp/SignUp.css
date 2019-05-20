@@ -6,16 +6,28 @@
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
           flex-direction: column;
-  width: 85%;
+  width: 90%;
+  padding-top: 1.5rem;
 }
 
-.sign-up-container.mobile {
-    padding-top: 1.5rem;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-            align-items: center;
+.sign-up-container.desktop {
+    max-width: 350px;
   }
 
 .sign-up-container .text-input.mobile {
       width: 100%;
+    }
+
+.sign-up-container .button {
+    display: block;
+  }
+
+.sign-up-container .button.desktop {
+      margin: 2rem 0 0;
+      width: 70%;
+    }
+
+.sign-up-container .button.mobile {
+      width: 60%;
+      margin: 2rem auto 0;
     }

@@ -4,9 +4,9 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
           justify-content: center;
@@ -19,28 +19,44 @@
             flex-direction: column;
   }
 
+.top-content.desktop {
+    padding: 4rem;
+  }
+
 .top-content.desktop > div {
       margin: 0 1rem;
     }
 
-.top-content img {
-    max-width: 100%;
-    object-fit: contain;
-  }
-
 .top-content .top-image-container {
-    height: 100%;
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-            justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+            align-items: center;
   }
 
-.top-content .top-image-container img {
-      height: 100%;
+.top-content .top-image-container.desktop {
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+              justify-content: flex-end;
     }
+
+.top-content .top-image-container.mobile {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+              justify-content: center;
+    }
+
+.top-content .top-image-container .top-image-wrapper.desktop img {
+        max-height: 700px;
+        max-width: 45vw;
+      }
+
+.top-content .top-image-container .top-image-wrapper.mobile img {
+        max-height: 700px;
+        max-width: 80vw;
+      }
 
 .top-content .top-image-container.desktop {
       width: 50%;
@@ -57,6 +73,9 @@
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+            flex: 1;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -79,6 +98,7 @@
       -webkit-box-align: start;
       -webkit-align-items: flex-start;
               align-items: flex-start;
+      margin-left: 2rem;
     }
 
 .top-content .top-text-container.mobile {
@@ -98,7 +118,7 @@
       }
 
 .top-content .top-text-container .trime.mobile {
-        width: 60%;
+        width: 100%;
       }
 
 .top-content .top-text-container .top-text.desktop {

@@ -10,7 +10,6 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  font-size: 20px;
 }
 
 .App {
@@ -36,7 +35,7 @@
 .App input[type='text'] {
     font-size: 1rem;
     line-height: 1.5rem;
-    margin: 2rem 0 1.2rem;
+    margin: 1.5rem 0 0;
     background: none;
     border: none;
     border-bottom: 1px solid #617478;
@@ -49,7 +48,7 @@
 .App button {
     font-family: Montserrat, 'Helvetica Neue', sans-serif;
     background: #ffdd34;
-    font-size: 1rem;
+    font-size: 0.8125rem;
     font-weight: 800;
     border: none;
     border-radius: 20px;
@@ -62,7 +61,7 @@
 .App input[type='button'] {
     font-family: Montserrat, 'Helvetica Neue', sans-serif;
     background: #ffdd34;
-    font-size: 1rem;
+    font-size: 0.8125rem;
     font-weight: 800;
     border: none;
     border-radius: 20px;
@@ -137,27 +136,27 @@
 
 .App ::-webkit-input-placeholder {
     color: #386573;
-    font-size: 20px;
+    font-size: 1rem;
   }
 
 .App ::-moz-placeholder {
     color: #386573;
-    font-size: 20px;
+    font-size: 1rem;
   }
 
 .App :-ms-input-placeholder {
     color: #386573;
-    font-size: 20px;
+    font-size: 1rem;
   }
 
 .App ::-ms-input-placeholder {
     color: #386573;
-    font-size: 20px;
+    font-size: 1rem;
   }
 
 .App ::placeholder {
     color: #386573;
-    font-size: 20px;
+    font-size: 1rem;
   }
 
 .App .main-container {
@@ -227,6 +226,10 @@
 
 .App.desktop h2 {
       font-size: 2rem;
+    }
+
+.App.mobile h1 {
+      font-size: 1.8rem;
     }
 
 .App.mobile h2 {

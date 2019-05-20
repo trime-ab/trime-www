@@ -12,17 +12,6 @@
   overflow: hidden;
   height: 3rem;
   margin-top: 4rem;
-  background: rgb(14, 176, 226);
-  background: -webkit-linear-gradient(
-    35deg,
-    rgba(14, 176, 226, 1) 0%,
-    rgba(131, 225, 255, 1) 75%
-  );
-  background: linear-gradient(
-    55deg,
-    rgba(14, 176, 226, 1) 0%,
-    rgba(131, 225, 255, 1) 75%
-  );
 }
 
 .bottom-container .bottom-content {

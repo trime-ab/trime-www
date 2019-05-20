@@ -34,6 +34,7 @@
     "react-icons": "^3.6.1",
     "react-native-svg-web": "^1.0.1",
     "react-scripts": "2.1.8",
+    "react-scroll": "^1.7.11",
     "react-transition-group": "^4.0.1",
     "router5": "^7.0.2",
     "router5-plugin-browser": "^7.0.2",

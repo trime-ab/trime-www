@@ -1,12 +1,15 @@
-import { computed, observable, action } from 'mobx';
+import { action, computed, observable } from 'mobx';
+
+import Channel from '../../../domain/Channel';
 import emailService from '../../../logic/email/EmailService';
 import personStore from '../../../logic/Person/Person.store';
-import l from '../../../logic/Logger/Logger';
 import phoneService from '../../../logic/phone/PhoneService';
 
 export class HomeTopSignUpState {
   @observable touchedFields: string[] = [];
   @observable submitHovered: boolean = false;
+  @observable focusField: string = 'phone';
+  @observable signUpInProgress: boolean = false;
 
   @computed get isPhoneInvalid() {
     return this.isTouched('phone')
@@ -15,13 +18,12 @@ export class HomeTopSignUpState {
   }
   @computed get isEmailInvalid() {
     return this.isTouched('email_address')
-      ? !emailService.validateEmail(personStore.person.email_address)
+      ? !emailService.validateEmail(personStore.person.email)
       : false;
   }
   @computed get isEmailEmpty() {
     return (
-      this.isTouched('email_address') &&
-      this.isEmpty(personStore.person.email_address)
+      this.isTouched('email_address') && this.isEmpty(personStore.person.email)
     );
   }
   @computed get isFirstNameEmpty() {
@@ -41,10 +43,7 @@ export class HomeTopSignUpState {
     return this.submitHovered && this.isEmpty(personStore.person.type);
   }
   @computed get isPermissionFalse() {
-    return (
-      this.submitHovered &&
-      this.isEmpty(personStore.person.marketing_permissions)
-    );
+    return this.submitHovered && this.isEmpty(personStore.person.channels);
   }
 
   @action setSubmitHovered = () => {
@@ -54,6 +53,22 @@ export class HomeTopSignUpState {
   @action addTouched = (fieldName: string): void => {
     this.touchedFields.push(fieldName);
   };
+
+  @action setFocusOnEmail = (): void => {
+    this.focusField = 'email';
+  };
+
+  @action toggleAgreeToPermissions = (): void => {
+    if (personStore.hasAgreed) {
+      personStore.person.setChannels([]);
+    } else {
+      personStore.person.setChannels([Channel.EMAIL, Channel.SMS]);
+    }
+  };
+
+  @action toggleSigningUpInProgress = (): void =>{
+    this.signUpInProgress = !this.signUpInProgress;
+  }
 
   private isTouched = (fieldName: string): boolean => {
     return !!this.touchedFields.filter(n => n === fieldName).length;
