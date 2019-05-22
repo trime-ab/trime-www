@@ -37,6 +37,10 @@
       padding: 4rem 0 4rem;
     }
 
+.body-container.mobile h2 {
+      margin: 0 0.5rem;
+    }
+
 .body-container img {
     object-fit: contain;
     max-width: 80%;
