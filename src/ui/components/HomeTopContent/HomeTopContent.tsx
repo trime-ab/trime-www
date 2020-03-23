@@ -27,7 +27,7 @@ class HomeTopContent extends React.Component<ResponsiveProps> {
           <img src={trimeImg} alt="Trime" className={className('trime')} />
           <div className={className('top-text')}>
             Trime is an app for personal trainers & trainees. <br />
-            Scroll down and we will tell you more!
+            Coming in 2020.
           </div>
           <SignUp />
         </div>

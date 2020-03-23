@@ -1,21 +1,26 @@
-import './Home.css';
+import './Home.css'
 
-import { observer } from 'mobx-react';
-import React from 'react';
+import { inject, observer } from 'mobx-react'
+import React from 'react'
 
-import HomeBody from '../../components/HomeBody/HomeBody';
-import HomeBottom from '../../components/HomeBottom/HomeBottom';
-import HomeBottomSignUp from '../../components/HomeBottomSignUp/HomeBottomSignUp';
-import HomeTop from '../../components/HomeTop/HomeTop';
+import HomeBody from '../../components/HomeBody/HomeBody'
+import HomeBottom from '../../components/HomeBottom/HomeBottom'
+import HomeBottomSignUp from '../../components/HomeBottomSignUp/HomeBottomSignUp'
+import HomeTop from '../../components/HomeTop/HomeTop'
+import signUpState, { SignUpState } from '../../components/SignUp/SignUp.state'
 
+interface Props {
+  signUpState?: SignUpState
+}
+
+@inject('signUpState')
 @observer
-class Home extends React.Component {
+class Home extends React.Component<Props> {
   render() {
     return (
       <div className="home-container">
         <HomeTop />
-        <HomeBody />
-        <HomeBottomSignUp />
+        {!this.props.signUpState.signUpClicked && <HomeBottomSignUp />}
         <HomeBottom />
       </div>
     );

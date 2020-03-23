@@ -13,7 +13,7 @@
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     font-style: normal;
-    color: #000;
+    color: black;
     width: 100%;
   }
 
@@ -21,7 +21,7 @@
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     font-style: normal;
-    color: #000;
+    color: black;
     width: 100%;
   }
 
@@ -29,22 +29,23 @@
     width: 100%;
   }
 
-.App input[type='text'] {
+.App input[type="text"] {
     font-size: 1rem;
     line-height: 1.5rem;
     margin: 1.5rem 0 0;
     background: none;
     border: none;
-    border-bottom: 1px solid #617478;
+    border-bottom: 1px solid #736438;
   }
 
-.App input[type='text']:focus {
+.App input[type="text"]:focus {
       border-bottom: 1px solid black;
     }
 
 .App button {
     font-family: Montserrat, 'Helvetica Neue', sans-serif;
-    background: #ffdd34;
+    background: black;
+    color: white;
     font-size: 0.8125rem;
     font-weight: 800;
     border: none;
@@ -55,9 +56,10 @@
     margin: 0.6rem 0;
   }
 
-.App input[type='button'] {
+.App input[type="button"] {
     font-family: Montserrat, 'Helvetica Neue', sans-serif;
-    background: #ffdd34;
+    background: black;
+    color: white;
     font-size: 0.8125rem;
     font-weight: 800;
     border: none;
@@ -68,32 +70,28 @@
     margin: 0.6rem 0;
   }
 
-.App button:disabled {
-      color: #c1a930;
-    }
-
-.App input[type='button']:disabled {
-      color: #c1a930;
+.App button:disabled, .App input[type="button"]:disabled {
+      opacity: 0.4;
     }
 
 .App .radio-input.p-radiobutton .p-radiobutton-box.p-highlight {
-          border-color: #ffd400;
-          background-color: #ffd400;
+          border-color: black;
+          background-color: black;
         }
 
 .App .radio-input.p-radiobutton .p-radiobutton-box.p-highlight:not(.p-disabled):hover {
           border-color: black;
-          background-color: #ffdd34;
+          background-color: black;
         }
 
 .App .checkbox-input.p-checkbox .p-checkbox-box.p-highlight {
-          border-color: #ffd400;
-          background-color: #ffd400;
+          border-color: black;
+          background-color: black;
         }
 
 .App .checkbox-input.p-checkbox .p-checkbox-box.p-highlight:not(.p-disabled):hover {
           border-color: black;
-          background-color: #ffdd34;
+          background-color: black;
         }
 
 .App .form-group {
@@ -107,7 +105,7 @@
   }
 
 .App .form-group > p {
-      color: #386573;
+      color: #736438;
       margin: 0 0 1.2rem;
     }
 
@@ -124,31 +122,31 @@
     }
 
 .App .weak {
-    color: #386573;
+    color: #736438;
   }
 
 .App ::-webkit-input-placeholder {
-    color: #386573;
+    color: #736438;
     font-size: 1rem;
   }
 
 .App ::-moz-placeholder {
-    color: #386573;
+    color: #736438;
     font-size: 1rem;
   }
 
 .App :-ms-input-placeholder {
-    color: #386573;
+    color: #736438;
     font-size: 1rem;
   }
 
 .App ::-ms-input-placeholder {
-    color: #386573;
+    color: #736438;
     font-size: 1rem;
   }
 
 .App ::placeholder {
-    color: #386573;
+    color: #736438;
     font-size: 1rem;
   }
 

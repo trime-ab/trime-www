@@ -18,14 +18,14 @@
 
 .link-container .link {
     text-decoration: none;
-    color: #000;
+    color: black;
     border-bottom: 3px solid transparent;
   }
 
 .link-container .link:hover {
-      border-bottom: 3px solid #000;
+      border-bottom: 3px solid black;
     }
 
 .link-container .link.active {
-      border-bottom: 3px solid #000;
+      border-bottom: 3px solid black;
     }

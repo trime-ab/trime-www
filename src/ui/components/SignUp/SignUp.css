@@ -20,6 +20,10 @@
     display: block;
   }
 
+.sign-up-container .button:disabled {
+      cursor: auto;
+    }
+
 .sign-up-container .button.desktop {
       margin: 2rem 0 0;
       width: 70%;

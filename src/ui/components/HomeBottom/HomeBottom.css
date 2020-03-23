@@ -7,11 +7,14 @@
   -webkit-box-pack: center;
           justify-content: center;
   overflow: hidden;
-  height: 3rem;
   margin-top: 4rem;
 }
 
 .bottom-container .bottom-content {
     font-size: 0.6rem;
-    color: #386573;
+    color: #736438;
   }
+
+.bottom-container .bottom-content.desktop {
+      height: 3rem;
+    }

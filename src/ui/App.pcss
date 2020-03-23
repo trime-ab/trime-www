@@ -1,4 +1,4 @@
-@import '../variables.pcss';
+@import "../variables.pcss";
 
 .App {
   width: 100%;
@@ -11,7 +11,7 @@
     font-family: var(--openSansFontFamily);
     font-weight: 300;
     font-style: normal;
-    color: var(--darkColor);
+    color: black;
     width: 100%;
   }
 
@@ -19,22 +19,23 @@
     width: 100%;
   }
 
-  input[type='text'] {
+  input[type="text"] {
     font-size: 1rem;
     line-height: 1.5rem;
     margin: 1.5rem 0 0;
     background: none;
     border: none;
-    border-bottom: 1px solid #617478;
+    border-bottom: 1px solid var(--weakColor);
     &:focus {
       border-bottom: 1px solid black;
     }
   }
 
   button,
-  input[type='button'] {
+  input[type="button"] {
     font-family: var(--montserratFontFamily);
-    background: var(--yellow);
+    background: black;
+    color: white;
     font-size: 0.8125rem;
     font-weight: 800;
     border: none;
@@ -44,7 +45,7 @@
     min-width: 220px;
     margin: 0.6rem 0;
     &:disabled {
-      color: var(--darkYellow);
+      opacity: 0.4;
     }
   }
 
@@ -52,12 +53,12 @@
     &.p-radiobutton {
       .p-radiobutton-box {
         &.p-highlight {
-          border-color: var(--strongYellow);
-          background-color: var(--strongYellow);
+          border-color: black;
+          background-color: black;
         }
         &.p-highlight:not(.p-disabled):hover {
           border-color: black;
-          background-color: var(--yellow);
+          background-color: black;
         }
       }
     }
@@ -67,12 +68,12 @@
     &.p-checkbox {
       .p-checkbox-box {
         &.p-highlight {
-          border-color: var(--strongYellow);
-          background-color: var(--strongYellow);
+          border-color: black;
+          background-color: black;
         }
         &.p-highlight:not(.p-disabled):hover {
           border-color: black;
-          background-color: var(--yellow);
+          background-color: black;
         }
       }
     }

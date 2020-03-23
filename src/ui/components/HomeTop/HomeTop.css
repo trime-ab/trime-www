@@ -20,16 +20,16 @@
             align-items: center;
     -webkit-box-pack: center;
             justify-content: center;
-    background: rgb(14, 176, 226);
+    background: rgb(255, 181, 0);
     background: -webkit-linear-gradient(
       35deg,
-      rgba(14, 176, 226, 1) 0%,
-      rgba(131, 225, 255, 1) 75%
+      rgba(255, 181, 0, 1) 0%,
+      rgba(255, 194, 45, 1) 75%
     );
     background: linear-gradient(
       55deg,
-      rgba(14, 176, 226, 1) 0%,
-      rgba(131, 225, 255, 1) 75%
+      rgba(255, 181, 0, 1) 0%,
+      rgba(255, 194, 45, 1) 75%
     );
   }
 

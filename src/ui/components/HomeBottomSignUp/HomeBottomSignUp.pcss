@@ -1,4 +1,4 @@
-@import '../../../variables.pcss';
+@import "../../../variables.pcss";
 
 .home-signup-container {
   width: 100%;
@@ -6,16 +6,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  img {
+    cursor: pointer;
+  }
 
   &.desktop {
+    margin-top: 8em;
     padding: 0 calc(var(--pageMargin) * 2);
+
     img {
       min-width: 750px;
     }
   }
 
   img {
+    margin-top: 3em;
     object-fit: contain;
-    max-width: 80%;
+    max-width: 90%;
   }
 }

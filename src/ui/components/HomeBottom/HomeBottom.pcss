@@ -1,4 +1,4 @@
-@import '../../../variables.pcss';
+@import "../../../variables.pcss";
 
 .bottom-container {
   width: 100%;
@@ -6,10 +6,14 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  height: 3rem;
   margin-top: var(--pageMargin);
+
   .bottom-content {
     font-size: 0.6rem;
     color: var(--weakColor);
+
+    &.desktop {
+      height: 3rem;
+    }
   }
 }

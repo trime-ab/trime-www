@@ -11,7 +11,12 @@
           justify-content: center;
 }
 
+.home-signup-container img {
+    cursor: pointer;
+  }
+
 .home-signup-container.desktop {
+    margin-top: 8em;
     padding: 0 calc(4rem * 2);
   }
 
@@ -20,6 +25,7 @@
     }
 
 .home-signup-container img {
+    margin-top: 3em;
     object-fit: contain;
-    max-width: 80%;
+    max-width: 90%;
   }
