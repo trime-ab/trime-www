@@ -1,13 +1,10 @@
 .top-container {
   width: 300%;
   display: -webkit-box;
-  display: -webkit-flex;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
           align-items: center;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
           justify-content: center;
   border-bottom-left-radius: 50%;
   border-bottom-right-radius: 50%;
@@ -18,13 +15,10 @@
     width: 33.3%;
     height: 100%;
     display: -webkit-box;
-    display: -webkit-flex;
     display: flex;
     -webkit-box-align: center;
-    -webkit-align-items: center;
             align-items: center;
     -webkit-box-pack: center;
-    -webkit-justify-content: center;
             justify-content: center;
     background: rgb(14, 176, 226);
     background: -webkit-linear-gradient(
