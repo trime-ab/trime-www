@@ -29,9 +29,11 @@ class HomeTopContent extends React.Component<ResponsiveProps> {
             Personal Training made accessible for trainers and Trainees
           </div>
           <br />
-          <h2>
-            Coming in 2020.
-            </h2>
+          <h3>
+            On your phone 2020.
+            </h3>
+            Do you want to know more? <br/>
+            Sign up below
           <SignUp />
         </div>
       </div>
