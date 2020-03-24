@@ -26,12 +26,12 @@ class HomeTopContent extends React.Component<ResponsiveProps> {
           <h1>Welcome to</h1>
           <img src={trimeImg} alt="Trime" className={className("trime")} />
           <div className={className("top-text")}>
-            Trime is a mobile marketplace that simplifies the process of
-            finding, comparing, booking, administrating and handling
-            transactions. While also being able to follow up with the Personal
-            Training for both trainers and trainees. <br />
-            Coming in 2020.
+            Personal Training made accessible for trainers and Trainees
           </div>
+          <br />
+          <h2>
+            Coming in 2020.
+            </h2>
           <SignUp />
         </div>
       </div>
