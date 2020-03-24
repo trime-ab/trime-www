@@ -5,7 +5,7 @@ import { inject, observer } from "mobx-react";
 import React from "react";
 
 import ResponsiveProps from "../../../logic/Responsive/Responsive.props";
-import phonesAndDudeImg from "../../assets/phones-and-dude.png";
+import newPhoneMapAndDudeImg from "../../assets/new-phone-map-and-dude.png";
 import trimeImg from "../../assets/trime.png";
 import SignUp from "../SignUp/SignUp";
 
@@ -19,14 +19,14 @@ class HomeTopContent extends React.Component<ResponsiveProps> {
       <div className={className("top-content")}>
         <div className={className("top-image-container")}>
           <div className={className("top-image-wrapper")}>
-            <img src={phonesAndDudeImg} alt="Trime" />
+            <img src={newPhoneMapAndDudeImg} alt="Trime" />
           </div>
         </div>
         <div className={className("top-text-container")}>
           <h1>Welcome to</h1>
           <img src={trimeImg} alt="Trime" className={className("trime")} />
           <div className={className("top-text")}>
-            Personal Training made accessible for trainers and Trainees
+            Where personal training is made accessible for trainers and Trainees.
           </div>
           <br />
           <h3>
