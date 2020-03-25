@@ -26,11 +26,11 @@ class HomeTopContent extends React.Component<ResponsiveProps> {
           <h1>Welcome to</h1>
           <img src={trimeImg} alt="Trime" className={className("trime")} />
           <div className={className("top-text")}>
-            Where personal training is made accessible for trainers and Trainees.
+            Where personal training is made accessible for trainers and trainees.
           </div>
           <br />
           <h3>
-            On your phone 2020.
+            On your phone in 2020.
             </h3>
             Do you want to know more? <br/>
             Sign up below
