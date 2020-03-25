@@ -198,7 +198,8 @@
 
 .App h3 {
     font-size: 1.2rem;
-    text-transform: uppercase
+    text-transform: uppercase;
+    text-align: center
   }
 
 .App small {

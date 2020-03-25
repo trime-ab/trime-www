@@ -4,114 +4,139 @@
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
-          align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
-          justify-content: center;
 }
 
 .top-content.mobile {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-  }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
 
 .top-content.desktop {
-    padding: 4rem;
-  }
+  padding: 4rem;
+}
 
 .top-content.desktop > div {
-      margin: 0 1rem;
-    }
+  margin: 0 1rem;
+}
 
 .top-content .top-image-container {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-            align-items: center;
-  }
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
 
 .top-content .top-image-container.desktop {
-      -webkit-box-pack: end;
-              justify-content: flex-end;
-    }
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+}
 
 .top-content .top-image-container.mobile {
-      -webkit-box-pack: center;
-              justify-content: center;
-    }
+  -webkit-box-pack: center;
+  justify-content: center;
+}
 
 .top-content .top-image-container .top-image-wrapper.desktop img {
-        max-height: 700px;
-        max-width: 45vw;
-      }
+  max-height: 700px;
+  max-width: 45vw;
+}
 
 .top-content .top-image-container .top-image-wrapper.mobile img {
-        max-height: 700px;
-        max-width: 80vw;
-      }
+  max-height: 700px;
+  max-width: 80vw;
+}
 
 .top-content .top-image-container.desktop {
-      width: 50%;
-      padding: 1rem 0 1rem 1rem;
-    }
+  width: 50%;
+  padding: 1rem 0 1rem 1rem;
+}
 
 .top-content .top-image-container.mobile {
-      width: 100%;
-      padding-bottom: 1rem;
-    }
+  width: 100%;
+  padding-bottom: 1rem;
+}
 
 .top-content .top-text-container {
-    height: 100%;
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-flex: 1;
-            flex: 1;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    -webkit-box-pack: center;
-            justify-content: center;
-  }
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
 
 /* Move text a bit towards center when larger screen */
 
 @media (min-width: 1100px) {
-
-.top-content .top-text-container {
-      margin-right: 10%
+  .top-content .top-text-container {
+    margin-right: 10%;
   }
-    }
+}
 
 .top-content .top-text-container.desktop {
-      -webkit-box-align: start;
-              align-items: flex-start;
-      margin-left: 2rem;
-    }
+  -webkit-box-align: start;
+  align-items: flex-start;
+  margin-left: 2rem;
+}
 
 .top-content .top-text-container.mobile {
-      -webkit-box-align: center;
-              align-items: center;
-      padding-top: 0rem;
-    }
+  -webkit-box-align: center;
+  align-items: center;
+  padding-top: 0rem;
+}
 
 .top-content .top-text-container h1,
-    .top-content .top-text-container h2 {
-      margin: 0;
-    }
+.top-content .top-text-container h2 {
+  margin: 0;
+}
+
+.top-content .top-text-container h3 {
+  max-width: 100%;
+}
 
 .top-content .top-text-container .trime.desktop {
-        width: 320px;
-      }
+  width: 320px;
+}
 
 .top-content .top-text-container .trime.mobile {
-        width: 100%;
-      }
+  width: 100%;
+}
 
 .top-content .top-text-container .top-text.desktop {
-        margin-top: 1.5rem;
-      }
+  margin-top: 1.5rem;
+  max-width: 65%;
+}
 
 .top-content .top-text-container .top-text.mobile {
-        margin-top: 2rem;
-        text-align: center;
-      }
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.top-content .top-text-container .beta-box.desktop {
+  max-width: 70%;
+
+}
+
+.top-content .top-text-container .beta-box.mobile {
+  text-align: center;
+}
+
+.top-content .top-text-container .top-text2.desktop {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+.top-content .top-text-container .top-text2.mobile {
+  margin-top: 2rem;
+}
+
+.top-content .top-text-container.mobile {
+  -webkit-box-pack: center;
+}

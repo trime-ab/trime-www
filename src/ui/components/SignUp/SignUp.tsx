@@ -43,7 +43,7 @@ class SignUp extends React.Component<SignUpProps> {
             className={buttonClassNames}
             disabled={!state.isValid}
           >
-            Sign Up
+            I want a newsletter!
           </button>
         </form>
       </div>
