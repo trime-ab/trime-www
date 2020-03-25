@@ -50,7 +50,7 @@
 
 .top-content .top-image-container.desktop {
       width: 50%;
-      padding: 1rem;
+      padding: 1rem 0 1rem 1rem;
     }
 
 .top-content .top-image-container.mobile {
@@ -60,6 +60,7 @@
 
 .top-content .top-text-container {
     height: 100%;
+    max-width: 69;
     display: -webkit-box;
     display: flex;
     -webkit-box-flex: 1;
@@ -99,7 +100,6 @@
       margin: 0;
     }
 
-
 .top-content .top-text-container .trime.desktop {
         width: 320px;
       }
@@ -109,7 +109,7 @@
       }
 
 .top-content .top-text-container .top-text.desktop {
-        max-width: 70%;
+        max-width: 69%;
         font-size: 1.2rem;
         text-align: center;
         margin-top: 1rem;
@@ -136,6 +136,7 @@
 
 .top-content .top-text-container .beta-box.mobile {
         margin-top: 2rem;
+        
       }
 
 .top-content .top-text-container .button {

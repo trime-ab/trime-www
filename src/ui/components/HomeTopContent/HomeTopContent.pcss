@@ -50,6 +50,7 @@
 
   .top-text-container {
     height: 100%;
+    max-width: 69;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -62,7 +63,7 @@
 
     &.desktop {
       align-items: flex-start;
-      margin-left: 2rem;
+      margin-left: 1rem;
     }
     &.mobile {
       align-items: center;
@@ -85,7 +86,10 @@
 
     .top-text {
       &.desktop {
-        margin-top: 1.5rem;
+        max-width: 69%;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 1rem;
       }
       &.mobile {
         margin-top: 2rem;
@@ -95,8 +99,7 @@
 
     .top-text2 {
       &.desktop {
-        font-size: 0.6rem;
-        margin-top: 1.5rem;
+        font-size: 1rem;
       }
       &.mobile {
         margin-top: 2rem;
@@ -105,11 +108,13 @@
 
     .beta-box {
       &.desktop {
+        font-size: large;
+        font-weight: bold;
         margin-top: 1.5rem;
       }
       &.mobile {
         margin-top: 2rem;
-        text-align: center;
+        
       }
     }
 
