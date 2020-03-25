@@ -17,14 +17,14 @@ interface HomeTopProps extends ResponsiveProps {
   homeTopSignUpState?: HomeTopSignUpState;
 }
 
-@inject("responsiveState", 'signUpState', 'homeTopSignUpState')
+@inject("responsiveState", "signUpState", "homeTopSignUpState")
 @observer
 class HomeTopContent extends React.Component<HomeTopProps> {
   render() {
     const className = this.getClassNames;
     const isMobile = this.props.responsiveState.isMobileClassNames;
     const classNames = classnames("home-signup-container", isMobile);
-    const buttonClassNames = classnames('button', isMobile);
+    const buttonClassNames = classnames("button", isMobile);
 
     return (
       <div className={className("top-content")}>
@@ -39,15 +39,15 @@ class HomeTopContent extends React.Component<HomeTopProps> {
           <div className={className("top-text")}>
             Where personal training is made accessible for trainers and
             trainees.
-            <h3 >On your phone in 2020.</h3>
+            <h3>On your phone in 2020.</h3>
           </div>
           <br />
           <div className={className("top-text2")}>
             Do you want to know more?
           </div>
-          <div className={className("beta-box")}>
           <SignUp />
-          <h3>Or sign up for the beta version here.</h3>
+          <div className={className("beta-box")}>
+            Or sign up for the beta version here.
           </div>
           <div className={classNames}>
             <button
