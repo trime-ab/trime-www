@@ -1,19 +1,14 @@
-import './Link.css';
+import './Link.css'
 
-import classnames, { ClassArray } from 'classnames';
-import React, {
-  ReactComponentElement,
-  ReactNode,
-  ReactPropTypes,
-  ReactText,
-} from 'react';
+import classnames, { ClassArray } from 'classnames'
+import React, { ReactNode, } from 'react'
 
-import { routerStore } from '../../../stores';
+import { routerStore } from '../../../stores'
 
 export interface LinkProps {
   children: ReactNode;
   to: string;
-  className: string;
+  className?: string;
   active?: boolean;
 }
 
