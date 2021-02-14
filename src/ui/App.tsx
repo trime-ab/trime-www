@@ -22,7 +22,6 @@ class App extends Component<ResponsiveProps> {
           <main className="main-container">
             {React.createElement(routerStore.currentComponent, {})}
           </main>
-          <footer><Link to="privacy">Privacy policy</Link></footer>
         </div>
       )
     } else {
